@@ -1,0 +1,160 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
+  overflow: hidden;
+}
+
+*,
+* *::before,
+* *::after {
+  box-sizing: border-box;
+}
+
+.box-wrapper {
+  width: 100vw;
+  height: 100vh;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+.box-rotate {
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  border-radius: 50%;
+  border: 4px dashed rgb(0, 0, 0);
+  animation: rotation 20s infinite linear;
+}
+
+.box-rotate2 {
+  position: absolute;
+  width: 150%;
+  height: 50%;
+  border-radius: 50%;
+  border: 4px dashed rgb(163, 6, 116);
+  transform: rotate(60deg);
+  animation: rotation2 50s infinite linear;
+}
+.box-rotate3 {
+  position: absolute;
+  width: 150%;
+  height: 50%;
+  border-radius: 50%;
+  border: 4px dashed rgb(199, 53, 136);
+  transform: rotate(180deg);
+  animation: rotation3 50s infinite linear;
+}
+.box-rotate4 {
+  position: absolute;
+  width: 150%;
+  height: 50%;
+  border-radius: 50%;
+  border: 4px dashed rgb(154, 60, 113);
+  transform: rotate(120deg);
+  animation: rotation4 50s infinite linear;
+}
+.box-rotate5 {
+  position: absolute;
+  width: 150%;
+  height: 50%;
+  border-radius: 50%;
+  border: 4px dashed rgb(154, 60, 113);
+  transform: rotate(150deg);
+  animation: rotation5 50s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@-webkit-keyframes rotation2 {
+  from {
+    transform: rotate(90deg);
+  }
+
+  to {
+    transform: rotate(450deg);
+  }
+}
+@-webkit-keyframes rotation3 {
+  from {
+    transform: rotate(45deg);
+  }
+
+  to {
+    transform: rotate(405deg);
+  }
+}
+@-webkit-keyframes rotation4 {
+  from {
+    transform: rotate(135deg);
+  }
+
+  to {
+    transform: rotate(495deg);
+  }
+}
+@-webkit-keyframes rotation5 {
+  from {
+    transform: rotate(180deg);
+  }
+
+  to {
+    transform: rotate(540deg);
+  }
+}
+
+.box-connection {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100vw;
+  height: 5px;
+  border-radius: 5px;
+  border: 2px dashed green;
+  transform-origin: left;
+  transition: all;
+}
+
+#reset {
+  position: fixed;
+  bottom: 20px;
+  left: 10px;
+}
+
+.child .box-rotate2,
+.child .box-rotate3,
+.child .box-rotate4,
+.child .box-rotate5 {
+  width: 100%;
+  height: 25%;
+  border-color: green !important;
+}
+.child .box-rotate {
+  width: 10%;
+  height: 10%;
+}
+[id^="bc-"] {
+  border-color: red;
+}
